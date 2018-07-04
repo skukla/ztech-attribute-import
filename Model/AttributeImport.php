@@ -318,6 +318,8 @@ class AttributeImport implements AttributeImportInterface
      */
     protected function processAttributeSet($eavSetup, $entityType, $attributeCode, $attribute)
     {
+      echo "We are here!"
+
         $entityTypeId = $eavSetup->getEntityTypeId($entityType);
         $sets = explode(",", $attribute['attribute_set']);
         $groups = explode(",", $attribute['attribute_set_group']);
