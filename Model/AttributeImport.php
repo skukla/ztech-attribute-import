@@ -317,6 +317,7 @@ class AttributeImport implements AttributeImportInterface
         $setData = [];
 
         foreach ($groups as $group) {
+            var_dump($group);
             [$setName, $groupName] = explode("=", $group);
             $setData[$setName] = $groupName;
         }
