@@ -320,9 +320,7 @@ class AttributeImport implements AttributeImportInterface
             // [$setName, $groupName] = explode('=', $group);
             // $setData[$setName] = $groupName;
             print_r($group);
-        }
-
-        die();
+        }  
 
         try {
             $this->attributeManagement->unassign($eavSetup->getAttributeSetId($entityTypeId, 'Default'), $attributeCode);
