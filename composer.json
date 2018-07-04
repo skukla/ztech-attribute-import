@@ -1,0 +1,15 @@
+{
+    "name": "ztech/module-attribute-import",
+    "type": "magento2-module",
+    "require": {
+        "magento/framework": "*",
+        },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Ztech\\AttributeImport\\": ""
+        }
+    }
+}

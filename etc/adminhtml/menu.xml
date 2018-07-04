@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This file is part of the Ztech AttributeImport package.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Ztech AttributeImport
+ * to newer versions in the future.
+ *
+ * @copyright Copyright (c) 2018 Zilker Technology, Ltd. (https://ztech.io/)
+ * @license   GNU General Public License ("GPL") v3.0
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Ztech_AttributeImport::import_eav" title="Import Attributes" sortOrder="30"
+             module="Ztech_AttributeImport" parent="Magento_Backend::system_convert"
+             action="ztechimport/import/index" resource="Ztech_AttributeImport::import"/>
+    </menu>
+</config>
