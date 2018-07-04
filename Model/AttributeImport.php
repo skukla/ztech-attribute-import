@@ -198,7 +198,7 @@ class AttributeImport implements AttributeImportInterface
             return;
         }
 
-        $values = explode(",", $data['values']);
+        $values = explode(',', $data['values']);
         unset($data['values']);
 
         $data['option']['values'] = $values;
@@ -298,13 +298,6 @@ class AttributeImport implements AttributeImportInterface
         }
     }
 
-    protected $logger;
-
-    public function __construct(\Psr\Log\LoggerInterface $logger)
-    {
-      $this->logger = $logger;
-    }
-
     /**
      * Process attribute set and groups.
      *
@@ -318,18 +311,13 @@ class AttributeImport implements AttributeImportInterface
      */
     protected function processAttributeSet($eavSetup, $entityType, $attributeCode, $attribute)
     {
-      echo "We are here!";
-
         $entityTypeId = $eavSetup->getEntityTypeId($entityType);
-        $sets = explode(",", $attribute['attribute_set']);
-        $groups = explode(",", $attribute['attribute_set_group']);
+        $sets = explode(',', $attribute['attribute_set']);
+        $groups = explode(',', $attribute['attribute_set_group']);
         $setData = [];
 
         foreach ($groups as $group) {
-            //$this->logger->info($group);
-            $this->logger->info("Hello");
-            //$this->logger->debug($group);
-            [$setName, $groupName] = explode("=", $group);
+            [$setName, $groupName] = explode('=', $group);
             $setData[$setName] = $groupName;
         }
 
