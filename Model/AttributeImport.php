@@ -317,9 +317,12 @@ class AttributeImport implements AttributeImportInterface
         $setData = [];
 
         foreach ($groups as $group) {
-            [$setName, $groupName] = explode('=', $group);
-            $setData[$setName] = $groupName;
+            // [$setName, $groupName] = explode('=', $group);
+            // $setData[$setName] = $groupName;
+            print_r($group);
         }
+
+        die();
 
         try {
             $this->attributeManagement->unassign($eavSetup->getAttributeSetId($entityTypeId, 'Default'), $attributeCode);
