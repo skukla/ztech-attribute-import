@@ -198,7 +198,7 @@ class AttributeImport implements AttributeImportInterface
             return;
         }
 
-        $values = explode(',', $data['values']);
+        $values = explode(",", $data['values']);
         unset($data['values']);
 
         $data['option']['values'] = $values;
@@ -312,13 +312,12 @@ class AttributeImport implements AttributeImportInterface
     protected function processAttributeSet($eavSetup, $entityType, $attributeCode, $attribute)
     {
         $entityTypeId = $eavSetup->getEntityTypeId($entityType);
-        $sets = explode(',', $attribute['attribute_set']);
-        $groups = explode(',', $attribute['attribute_set_group']);
+        $sets = explode(",", $attribute['attribute_set']);
+        $groups = explode(",", $attribute['attribute_set_group']);
         $setData = [];
 
         foreach ($groups as $group) {
-            print_r($group);
-            [$setName, $groupName] = explode('=', $group);
+            [$setName, $groupName] = explode("=", $group);
             $setData[$setName] = $groupName;
         }
 
