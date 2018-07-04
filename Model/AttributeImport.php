@@ -67,6 +67,23 @@ class AttributeImport implements AttributeImportInterface
     protected $attributeRepository;
 
     /**
+     * @var array
+     */
+    protected $changesOnUpdate = [
+        'user_defined',
+        'visible',
+        'global',
+        'searchable',
+        'filterable',
+        'visible_on_front',
+        'used_in_product_listing',
+        'required',
+        'comparable',
+        'visible_in_advanced_search',
+        'filterable_in_search'
+    ];
+
+    /**
      * InstallSchema constructor.
      *
      * @param ComponentRegistrar $componentRegistrar
@@ -96,18 +113,18 @@ class AttributeImport implements AttributeImportInterface
      * Process attribute import.
      *
      * @param string|null $content
-     * @param bool|null $behavior
+     * @param bool|null $behaviour
      *
      * @return void
      * @throws LocalizedException
      */
-    public function import($content = null, $behavior = null)
+    public function import($content = null, $behaviour = null)
     {
         $errors = [];
 
         foreach ($this->parseData($content) as $attribute) {
             try {
-                if ($behavior === 'delete') {
+                if ($behaviour === 'delete') {
                     $this->attributeRepository->deleteById($attribute['attribute_code']);
                 } else {
                     switch ($this->getBehavior($attribute)) {
@@ -249,6 +266,10 @@ class AttributeImport implements AttributeImportInterface
         foreach ($attribute as $key => $value) {
             if ($value == '') {
                 continue;
+            }
+
+            if (in_array($key, $this->changesOnUpdate)) {
+                $key = 'is_' . $key;
             }
 
             $eavSetup->updateAttribute($entityType, $attributeCode, $key, $value);
