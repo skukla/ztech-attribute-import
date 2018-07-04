@@ -324,8 +324,9 @@ class AttributeImport implements AttributeImportInterface
         $setData = [];
 
         foreach ($groups as $group) {
-            $this->logger->info($group);
-            $this->logger->debug($group);
+            //$this->logger->info($group);
+            $this->logger->info("Hello");
+            //$this->logger->debug($group);
             [$setName, $groupName] = explode("=", $group);
             $setData[$setName] = $groupName;
         }
