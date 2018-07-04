@@ -2,7 +2,7 @@
     "name": "ztech/module-attribute-import",
     "type": "magento2-module",
     "require": {
-        "magento/framework": "*",
+        "magento/framework": "*"
         },
     "autoload": {
         "files": [
