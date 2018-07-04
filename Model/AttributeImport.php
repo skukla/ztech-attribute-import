@@ -298,6 +298,13 @@ class AttributeImport implements AttributeImportInterface
         }
     }
 
+    protected $logger;
+
+    public function __construct(\Psr\Log\LoggerInterface $logger)
+    {
+      $this->logger = $logger;
+    }
+
     /**
      * Process attribute set and groups.
      *
@@ -317,7 +324,8 @@ class AttributeImport implements AttributeImportInterface
         $setData = [];
 
         foreach ($groups as $group) {
-            var_dump($group);
+            $this->logger->info($group);
+            $this->logger->debug($group);
             [$setName, $groupName] = explode("=", $group);
             $setData[$setName] = $groupName;
         }
