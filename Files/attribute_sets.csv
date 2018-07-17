@@ -1,5 +1,7 @@
-name,based_on,group_sort_order,groups
-Demco Default,Default,100,Demco General
-Demco Furniture,Demco Default,100,Demco Chairs
-,,100,Demco Tables
-Demco Library Supplies,Demco Default,100,Demco Book Supports
+name,based_on,sort_order,groups
+Demco Default,Default,10,Demco General
+Library Supplies,Demco Default,20,"Library Supplies, Protection"
+Creative Play,Demco Default,30,Activity Center
+Carpets,Demco Default,40,Themed Carpet
+Furniture,Demco Default,50,"Seatings, Storages, Displays, Tables, Desks, Computer Work Stations, Chairs"
+Audio Visual,Demco Default,60,Tablets and Phones
